@@ -20,8 +20,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .flex {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
