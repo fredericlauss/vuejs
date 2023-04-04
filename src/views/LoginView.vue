@@ -1,12 +1,35 @@
 <template>
   <PageLayout id="login-page">
     <div class="login-content">
-
+        <div class="image-content">
+            <img class="image-login-design" src="../assets/login-design.svg" alt="" srcset="">
+        </div>
+        <div class="formulaire-content">
+            <div class="title-form">
+                <div class="border-bottom-login">
+                    <h1>Contact</h1>
+                </div>
+            </div>
+            <div class="input-form-content">
+                <div class="email-form">
+                    <label for="">E-mail</label>
+                    <input class="input-mail-login" type="text">
+                </div>
+                <div class="Password-form">
+                    <label for="">Password</label>
+                    <input class="input-password-login" type="password">
+                </div>
+                <div class="submit-form-login">
+                    <Button>Envoyer</Button>
+                </div>
+            </div>
+        </div>
     </div>
   </PageLayout>
 </template>
 
 <script>
+import { json } from "stream/consumers";
 import Button from "../components/global/Button.vue";
 import PageLayout from "../components/global/PageLayout.vue";
 export default {
@@ -15,6 +38,8 @@ export default {
         Button
     }
 }
+
+
 </script>
 
 
@@ -23,8 +48,82 @@ export default {
 .login-content{
     width: 75vw;
     height: 75vh;
-    background-color: rgb(218, 218, 218);
+    background-color: var(--grey-300);
     border-radius: 20px;
+    display: flex;
+
+    .image-content{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid black;
+        
+        .image-login-design{
+            width: 90%;
+            height: 90%;
+        }
+    }
+
+    .formulaire-content{
+        width: 50%;
+        height: 100%;
+        background-color: var(--grey-100);
+        border-radius: 0px 20px 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title-form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 20%;
+
+            .border-bottom-login{
+                width: 90%;
+                height: 100%;
+                border-bottom: 2px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+
+        .input-form-content{
+            width: 100% ;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .email-form , .Password-form{
+                width: 80%;
+                height: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom:20px ;
+
+                .input-mail-login, .input-password-login{
+                    padding-left: 10px;
+                    width: 80%;
+                    height: 30px;
+                    border-radius: 4px;
+                    border: 2px solid var(--main-color);
+                }
+            }
+
+            .submit-form-login{
+                margin-top:150px ;
+            }
+        }
+    }
 }
 
 </style>
