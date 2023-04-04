@@ -1,6 +1,6 @@
 <template>
     <article class="article">
-        <a href="">
+        <a :href="'/blog/' + encodeURIComponent(post.id)">
             <img src="https://www.monsitevert.fr/assets/5ff426b3856b5a5e5c472825/2023/02/22/13/11/35/MEA%20-%20MSV%20h%C3%83%C2%A9bergement-01.min80.jpg" >
             <div class="infos">
                 <h4>{{ post.title }}</h4>
