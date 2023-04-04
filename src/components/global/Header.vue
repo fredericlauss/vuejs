@@ -8,7 +8,7 @@
             <Navigation />
 
             <div class="buttons">
-                <Button variant="outlined">Login</Button>
+                <a href="/login"><Button variant="outlined">Login</Button></a>
                 <Button>Register</Button>
             </div>
         </div>
@@ -18,11 +18,13 @@
 <script>
 import Button from './Button.vue';
 import Navigation from './Navigation.vue';
+
 export default {
     components: {
         Navigation,
         Button
     }
+    
 }
 </script>
 
