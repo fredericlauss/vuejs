@@ -10,35 +10,60 @@
                     <h1>Contact</h1>
                 </div>
             </div>
-            <div class="input-form-content">
+            <form v-on:submit.prevent="handleSubmitLogin()" class="input-form-content">
                 <div class="email-form">
                     <label for="">E-mail</label>
-                    <input class="input-mail-login" type="text">
+                    <input class="input-mail-login" v-model="email" type="text">
+                    <div></div>
                 </div>
                 <div class="Password-form">
                     <label for="">Password</label>
-                    <input class="input-password-login" type="password">
+                    <input class="input-password-login" v-model="password" type="password">
                 </div>
                 <div class="submit-form-login">
-                    <Button>Envoyer</Button>
+                    <input class="animated-button" type="submit">
                 </div>
-            </div>
+            </form>
         </div>
     </div>
   </PageLayout>
 </template>
 
 <script>
-import { json } from "stream/consumers";
+import Request from "../helpers/Request";
 import Button from "../components/global/Button.vue";
 import PageLayout from "../components/global/PageLayout.vue";
+
 export default {
+    data() {
+        return {
+            users : [],
+            email : "",
+            password : "",
+            errors : ""
+        }
+    },
+    methods: {
+        handleSubmitLogin() {
+                console.log(this.email);
+                console.log(this.password);
+
+                this.users.map(user => this.email === user.email && this.password === user.password ? console.log('ok'): "")
+                console.log(this.users);
+            }
+
+
+    }
+    ,
+    async created() {
+        this.users = await Request.get('/users')
+    }
+    ,
     components: {
         PageLayout,
         Button
     }
 }
-
 
 </script>
 
