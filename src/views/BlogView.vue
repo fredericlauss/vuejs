@@ -36,7 +36,7 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: start;
 }
 </style>
