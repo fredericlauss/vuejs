@@ -3,12 +3,12 @@
         <div class="small">
             <p>Last name:</p>
             <input v-model="lastName" placeholder="Dupond" />
-            <div v-if="errors.firstName" class="error">{{ errors.firstName }}</div>
+            <div v-if="errors.lastName" class="error">{{ errors.lastName }}</div>
         </div>
         <div class="small">
             <p>Name:</p>
             <input v-model="firstName" placeholder="Bernard" />
-            <div v-if="errors.lastName" class="error">{{ errors.lastName }}</div>
+            <div v-if="errors.firstName" class="error">{{ errors.firstName }}</div>
         </div>
         <div class="large">
             <p>Message:</p>
@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 form {
     width: 600px;
     display: flex;
