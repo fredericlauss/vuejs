@@ -8,7 +8,7 @@
         </div>
         <p class="desc">{{ description }}</p>
         <div class="card-footer">
-            <Button @click="() => addToCart(id)" :variant="filled">
+            <Button @click="addToCart" :variant="filled">
                 Add to cart
             </Button>
             <p>{{ price }}€</p>
@@ -21,13 +21,6 @@ import Button from '../global/Button.vue';
 import Storage from '../../helpers/Storage';
 
 export default {
-    data() {
-        return {
-            productId: {
-                type: Number,
-            }
-        }
-    },
     props: {
         id: {
             type: Number,
@@ -62,9 +55,8 @@ export default {
     },
     components: { Button },
     methods: {
-        addToCart: (id) => {
-            console.log(this)
-            Storage.pushItem('cart', id)
+        addToCart() {
+            Storage.pushItem('cart', this.id);
         }
     }
 }
@@ -116,7 +108,7 @@ export default {
 
     p.desc {
         display: -webkit-box;
-        max-width: 200px;
+        max-width: 100%;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
