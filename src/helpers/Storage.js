@@ -1,10 +1,12 @@
 export default class Storage {
     static getItem(key) {
-        return localStorage.getItem(key);
+        const item = localStorage.getItem(key);
+        return JSON.parse(item);
     }
 
     static setItem(key, item) {
-        localStorage.setItem(key, item);
+        const stringItem = JSON.stringify(item);
+        localStorage.setItem(key, stringItem);
     }
 
     static pushItem(key, item) {
