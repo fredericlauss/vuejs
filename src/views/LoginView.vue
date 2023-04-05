@@ -10,7 +10,8 @@
                     <h1>Contact</h1>
                 </div>
             </div>
-            <form v-on:submit.prevent="handleSubmitLogin()" class="input-form-content">
+            <!-- <form v-on:submit.prevent="handleSubmitLogin()" class="input-form-content"> -->
+            <form class="input-form-content">
                 <div class="email-form">
                     <label for="">E-mail</label>
                     <input class="input-mail-login" v-model="email" type="text">
@@ -21,7 +22,7 @@
                     <input class="input-password-login" v-model="password" type="password">
                 </div>
                 <div class="submit-form-login">
-                    <input class="animated-button" type="submit">
+                    <Button>Envoyer</Button>
                 </div>
             </form>
         </div>
@@ -39,22 +40,41 @@ export default {
         return {
             users : [],
             email : "",
-            password : "",
-            errors : ""
+            password : ""
         }
     },
     methods: {
-        handleSubmitLogin() {
-                console.log(this.email);
-                console.log(this.password);
 
-                this.users.map(user => this.email === user.email && this.password === user.password ? console.log('ok'): "")
-                console.log(this.users);
-            }
+        async login() {
+            console.log('Startreed')
+            const res = await fetch('https://fakestoreapi.com/auth/login',{
+                method:'POST',
+                body:JSON.stringify({
+                    username: "johnd",
+                    password: "m38rmF$"
+                })
+            })
 
+            console.log("res : ", res);
+        },
+        handleSubmitLogin: async function() {
+            console.log('Startreed')
+            const res = await fetch('https://fakestoreapi.com/auth/login',{
+                method:'POST',
+                body:JSON.stringify({
+                    username: "johnd",
+                    password: "m38rmF$"
+                })
+            })
 
-    }
-    ,
+            console.log("res : ", res);
+
+            console.log(this.email);
+            console.log(this.password);
+
+            this.users.map(user => this.email === user.email && this.password === user.password ? "ok": "")
+        }
+    },
     async created() {
         this.users = await Request.get('/users')
     }

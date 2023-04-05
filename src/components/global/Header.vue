@@ -8,7 +8,7 @@
             <Navigation />
 
             <div class="buttons">
-                 <a href="/login"><Button variant="outlined">Login</Button></a>
+                <router-link  to="/login"><button>Login</button></router-link> 
                 <Button>Register</Button>
             </div>
         </div>
