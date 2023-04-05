@@ -8,7 +8,7 @@
             <Navigation />
 
             <div class="buttons">
-                <Button variant="outlined">Login</Button>
+                <router-link  to="/login"><button>Login</button></router-link> 
                 <Button>Register</Button>
                 <Popup />
             </div>
@@ -26,6 +26,7 @@ export default {
         Button,
         Popup
     }
+    
 }
 </script>
 
