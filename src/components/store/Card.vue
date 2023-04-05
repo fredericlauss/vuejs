@@ -3,11 +3,13 @@
         <div class="image">
             <img :src="image" :alt="title">
         </div>
-        <h4>{{ title }}</h4>
+        <div class="link">
+            <a>{{ title }}</a>
+        </div>
         <p class="desc">{{ description }}</p>
         <div class="card-footer">
-            <Button :variant="filled">
-                Acheter
+            <Button @click="addToCart" :variant="filled">
+                Add to cart
             </Button>
             <p>{{ price }}€</p>
         </div>
@@ -16,6 +18,7 @@
 
 <script>
 import Button from '../global/Button.vue';
+import Storage from '../../helpers/Storage';
 
 export default {
     props: {
@@ -50,13 +53,19 @@ export default {
             default: false
         }
     },
-    components: { Button }
+    components: { Button },
+    methods: {
+        addToCart() {
+            Storage.pushItem('cart', this.id);
+        }
+    }
 }
 </script>
 
 <style lang="scss">
 .card {
     width: 20%;
+    min-width: 225px;
     height: 380px;
     padding: 16px;
     flex-grow: 1;
@@ -82,16 +91,24 @@ export default {
         }
     }
 
-    h4 {
+    .link {
+        width: 100%;
         padding: 10px 0;
+
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+
+        a {
+            cursor: pointer;
+            font-size: large;
+            font-weight: 600;
+        }
     }
 
     p.desc {
         display: -webkit-box;
-        max-width: 200px;
+        max-width: 100%;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;

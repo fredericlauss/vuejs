@@ -38,3 +38,20 @@ button {
     background-color: transparent;
     border: unset;
 }
+
+input.animated-button {
+    padding: 10px 15px;
+
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: var(--fontsize-normal);
+
+    color: var(--grey-0);
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+}
+
+input.animated-button:hover {
+    color: var(--grey-0);
+    background-color: var(--main-color-darker);
+}

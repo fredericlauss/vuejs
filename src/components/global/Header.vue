@@ -10,6 +10,7 @@
             <div class="buttons">
                 <router-link  to="/login"><button>Login</button></router-link> 
                 <Button>Register</Button>
+                <Popup />
             </div>
         </div>
     </header>
@@ -18,11 +19,12 @@
 <script>
 import Button from './Button.vue';
 import Navigation from './Navigation.vue';
-
+import Popup from '../popup/Popup.vue';
 export default {
     components: {
         Navigation,
-        Button
+        Button,
+        Popup
     }
     
 }

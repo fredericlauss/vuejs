@@ -1,0 +1,25 @@
+[
+    {
+    "id": 1,
+    "title": "Mon premier article de blog",
+    "date": "2022-01-01",
+    "author": "Jane Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nulla dolor. Donec vel nibh in purus suscipit aliquam a vel sapien. Nulla pharetra accumsan orci, eu bibendum lorem. Sed blandit euismod nisl, sit amet iaculis nulla faucibus non. Pellentesque non pretium est. Nulla eu felis elit. Donec at interdum nibh. Nullam ac ex velit. Fusce id metus sit amet magna faucibus dictum."
+  },
+  {
+    "id": 2,
+    "title": "Mon premier article de blog",
+    "date": "2022-01-01",
+    "author": "Jane Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nulla dolor. Donec vel nibh in purus suscipit aliquam a vel sapien. Nulla pharetra accumsan orci, eu bibendum lorem. Sed blandit euismod nisl, sit amet iaculis nulla faucibus non. Pellentesque non pretium est. Nulla eu felis elit. Donec at interdum nibh. Nullam ac ex velit. Fusce id metus sit amet magna faucibus dictum."
+  },
+  {
+    "id": 3,
+    "title": "Mon premier article de blog",
+    "date": "2022-01-01",
+    "author": "Jane Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nulla dolor. Donec vel nibh in purus suscipit aliquam a vel sapien. Nulla pharetra accumsan orci, eu bibendum lorem. Sed blandit euismod nisl, sit amet iaculis nulla faucibus non. Pellentesque non pretium est. Nulla eu felis elit. Donec at interdum nibh. Nullam ac ex velit. Fusce id metus sit amet magna faucibus dictum."
+  }
+
+]
+  
